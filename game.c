@@ -36,6 +36,7 @@ int main(int argc, char** argv)
   glClearColor(0.5, 0.5, 0.5, 0);
 
   glutDisplayFunc(render);
+  glutTimerFunc(1000 / FPS, render, 1);
   glutMainLoop();
 
   return 0;
@@ -52,5 +53,4 @@ void render()
   glutSwapBuffers();
 
   glutPostRedisplay();
-  glutTimerFunc(1000 / FPS, render, 1);
 }
